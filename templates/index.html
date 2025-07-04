@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Adoption Predictor</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Pet Adoption Likelihood Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="AgeMonths">Age (Months):</label>
+        <input type="number" id="AgeMonths" name="AgeMonths" min="0" required>
+
+        <label for="WeightKg">Weight (Kg):</label>
+        <input type="number" id="WeightKg" name="WeightKg" step="0.1" min="0" required>
+
+        <label for="Vaccinated">Vaccinated:</label>
+        <select id="Vaccinated" name="Vaccinated" required>
+            <option value="">--Select--</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="HealthCondition">Health Condition:</label>
+        <select id="HealthCondition" name="HealthCondition" required>
+            <option value="">--Select--</option>
+            <option value="Healthy">Healthy</option>
+            <option value="Medical Condition">Medical Condition</option>
+            
+        </select>
+
+        <label for="TimeInShelterDays">Time in Shelter (Days):</label>
+        <input type="number" id="TimeInShelterDays" name="TimeInShelterDays" min="0" required>
+
+        <label for="AdoptionFee">Adoption Fee:</label>
+        <input type="number" id="AdoptionFee" name="AdoptionFee" step="0.01" min="0" required>
+
+        <label for="PreviousOwner">Previous Owner:</label>
+        <select id="PreviousOwner" name="PreviousOwner" required>
+            <option value="">--Select--</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="PetType">Pet Type:</label>
+        <select id="PetType" name="PetType" required>
+            <option value="">--Select--</option>
+            <option value="Bird">Bird</option>
+            <option value="Cat">Cat</option>
+            <option value="Dog">Dog</option>
+            <option value="Rabbit">Rabbit</option>
+        </select>
+
+        <label for="Breed">Breed:</label>
+        <select id="Breed" name="Breed" required>
+            <option value="">--Select--</option>
+            <option value="Golden Retriever">Golden Retriever</option>
+            <option value="Labrador">Labrador</option>
+            <option value="Parakeet">Parakeet</option>
+            <option value="Persian">Persian</option>
+            <option value="Poodle">Poodle</option>
+            <option value="Rabbit">Rabbit</option>
+            <option value="Siamese">Siamese</option>
+        </select>
+
+        <label for="Color">Color:</label>
+        <select id="Color" name="Color" required>
+            <option value="">--Select--</option>
+            <option value="Black">Black</option>
+            <option value="Brown">Brown</option>
+            <option value="Gray">Gray</option>
+            <option value="Orange">Orange</option>
+            <option value="White">White</option>
+        </select>
+
+        <label for="Size">Size:</label>
+        <select id="Size" name="Size" required>
+            <option value="">--Select--</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+
+        <button type="submit" class="submit-button">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            <strong>Prediction:</strong> {{ prediction }}
+        </div>
+    {% endif %}
+</body>
+</html>
