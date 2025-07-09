@@ -1,6 +1,6 @@
 # Pet-Adoption-Predictor
 
-**Link to wWbsite**: https://pet-adoption-predictor-1.onrender.com/
+**Link to Website**: https://pet-adoption-predictor-1.onrender.com/
 
 **Pet Adoption Predictor**
 This is a Flask-based web application that predicts the likelihood of a pet being adopted based on input features using a Support Vector Machine (SVM) model trained on structured data. The app uses an RBF kernel and includes preprocessing steps like one-hot encoding and standard scaling.
